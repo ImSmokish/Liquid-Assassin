@@ -1,0 +1,21 @@
+{
+  "name": "liquidassassin-tests",
+  "version": "1.0.0",
+  "description": "Test suite for LiquidAssassin liquidation bot",
+  "scripts": {
+    "test": "npx hardhat test",
+    "test:contracts": "npx hardhat test test/contract-tests.js",
+    "test:backend": "mocha test/backend-tests.js --timeout 10000",
+    "test:integration": "mocha test/integration-tests.js --timeout 30000",
+    "test:all": "npm run test:contracts && npm run test:backend && npm run test:integration",
+    "test:coverage": "npx hardhat coverage",
+    "test:gas": "REPORT_GAS=true npx hardhat test"
+  },
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "mocha": "^10.0.0",
+    "supertest": "^6.3.0",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solidity-coverage": "^0.8.0"
+  }
+}
