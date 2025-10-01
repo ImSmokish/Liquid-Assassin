@@ -1,0 +1,54 @@
+{
+  "name": "liquidassassin-multichain-bot",
+  "version": "1.0.0",
+  "description": "Multi-chain Aave V3 liquidation bot with real-time WebSocket monitoring",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm run dev",
+    "build": "npm run client:build",
+    "client:build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "deploy:ethereum": "npx hardhat run scripts/deploy.ts --network ethereum",
+    "deploy:optimism": "npx hardhat run scripts/deploy.ts --network optimism",
+    "deploy:arbitrum": "npx hardhat run scripts/deploy.ts --network arbitrum",
+    "deploy:polygon": "npx hardhat run scripts/deploy.ts --network polygon",
+    "deploy:all": "npm run deploy:ethereum && npm run deploy:optimism && npm run deploy:arbitrum && npm run deploy:polygon",
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "clean": "npx hardhat clean"
+  },
+  "keywords": [
+    "aave",
+    "liquidation",
+    "defi",
+    "flash-loans",
+    "multi-chain",
+    "ethereum",
+    "optimism",
+    "arbitrum",
+    "polygon"
+  ],
+  "author": "LiquidAssassin Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@types/node": "^20.0.0",
+    "concurrently": "^8.0.0",
+    "hardhat": "^2.19.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "ethers": "^6.8.0",
+    "pg": "^8.11.0",
+    "ws": "^8.14.0",
+    "express": "^4.18.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.0",
+    "uuid": "^9.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}

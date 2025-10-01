@@ -1,0 +1,67 @@
+LIQUIDASSASSIN CONTRACT DEPLOYMENT PARAMETERS
+===============================================
+
+CONSTRUCTOR PARAMETERS FOR EACH CHAIN:
+=====================================
+
+1. ETHEREUM MAINNET:
+   Pool Address: 0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2
+   Router Address: 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D (Uniswap V2)
+   WETH Address: 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2
+   Owner Address: [YOUR_WALLET_ADDRESS]
+
+2. OPTIMISM MAINNET:
+   Pool Address: 0x794a61358D6845594F94dc1DB02A252b5b4814aD
+   Router Address: 0xE592427A0AEce92De3Edee1F18E0157C05861564 (Uniswap V3)
+   WETH Address: 0x4200000000000000000000000000000000000006
+   Owner Address: [YOUR_WALLET_ADDRESS]
+
+3. ARBITRUM MAINNET:
+   Pool Address: 0x794a61358D6845594F94dc1DB02A252b5b4814aD
+   Router Address: 0xE592427A0AEce92De3Edee1F18E0157C05861564 (Uniswap V3)
+   WETH Address: 0x82aF49447D8a07e3bd95BD0d56f35241523fBab1
+   Owner Address: [YOUR_WALLET_ADDRESS]
+
+4. POLYGON MAINNET:
+   Pool Address: 0x794a61358D6845594F94dc1DB02A252b5b4814aD
+   Router Address: 0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff (QuickSwap)
+   WETH Address: 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270 (WMATIC)
+   Owner Address: [YOUR_WALLET_ADDRESS]
+
+DEPLOYMENT STEPS:
+================
+
+1. Open Remix IDE (remix.ethereum.org)
+2. Load your UltimateAaveLiquidator.sol contract
+3. Select the network (Ethereum, Optimism, Arbitrum, or Polygon)
+4. Connect your wallet
+5. Deploy with the constructor parameters above
+6. Save the contract address for each chain
+
+GAS COSTS:
+==========
+
+Ethereum: ~$1.00 (most expensive)
+Optimism: ~$0.25
+Arbitrum: ~$0.25
+Polygon: ~$0.25
+Total: ~$2.00
+
+IMPORTANT NOTES:
+===============
+
+- Replace [YOUR_WALLET_ADDRESS] with your actual wallet address
+- Make sure you have enough ETH for gas on each chain
+- Save the contract addresses - you'll need them for the environment variables
+- The contract will be deployed with you as the owner
+
+ENVIRONMENT VARIABLES TO UPDATE:
+===============================
+
+After deployment, update these in your .env file:
+LIQUIDATOR_CONTRACT_1=0x... (Ethereum address)
+LIQUIDATOR_CONTRACT_10=0x... (Optimism address)
+LIQUIDATOR_CONTRACT_42161=0x... (Arbitrum address)
+LIQUIDATOR_CONTRACT_137=0x... (Polygon address)
+
+That's it! Your liquidation bot will be live on all 4 chains.
